@@ -1,6 +1,6 @@
-# Game Center
+# Game Center Beta
 
-Game Center ist eine Angular-PWA zum Verwalten von Spielern, Rankings und
+Game Center Beta ist eine Angular-PWA zum Verwalten von Spielern, Rankings und
 verschiedenen Brettspielen. Das Angular-Projekt liegt direkt im Repository-Root.
 
 ## Entwicklung
@@ -26,7 +26,7 @@ npm run deploy
 ```
 
 Der Produktionsbuild wird unter `dist/frontend` erzeugt. `npm run deploy` baut
-die App mit dem GitHub-Pages-Unterpfad `/game-center/` und veröffentlicht
+die App mit dem GitHub-Pages-Unterpfad `/game-center-beta/` und veröffentlicht
 `dist/frontend/browser` auf dem Branch `gh-pages`.
 
 In GitHub unter **Settings > Pages** auswählen:
@@ -35,7 +35,8 @@ In GitHub unter **Settings > Pages** auswählen:
 - **Branch:** `gh-pages`
 - **Folder:** `/ (root)`
 
-Der Produktionsbuild verwendet den Live-Unterpfad `/game-center/`.
+Bei einem anderen Repository-Namen müssen `base-href` und `deploy-url` im Script
+`build:pages` angepasst werden.
 
 ## Aktueller Funktionsumfang
 
@@ -66,9 +67,17 @@ Geräten synchronisiert. Beim Löschen der Browserdaten können sie verloren geh
 
 Die versionierten Migrationen liegen in `supabase/migrations/`:
 
-- `20260918220000_core_schema.sql`: Profile, Ranking-Spiele, Freundschaften,
-  RLS-Policies und automatisches Erstellen eines Profils bei Registrierung
-- `20260918221000_notifications.sql`: Benachrichtigungen und RLS-Policies
+- `20260918220000_core_schema.sql`: komplettes Grundschema (Profile,
+  Ranking-Spiele, Freundschaften, Benachrichtigungen, F1-Strategie,
+  Multiplayer-Lobbys, RLS und Rechte) für ein leeres Supabase-Projekt
+- `20260929130000_beta_schema_sync.sql` (nur Beta): bringt die bestehende
+  Beta-Datenbank mit dem alten Schema auf den Stand des neuen Grundschemas;
+  auf einer neuen Datenbank ohne Wirkung
+- `20260929140000_notifications_and_roles.sql` bis
+  `20260929170000_friendship_removal.sql`: Rollen, Freundschafts- und
+  Systembenachrichtigungen, Lesestatus und Entfernen von Freunden
+
+Alle Dateien sind wiederholbar und werden in Reihenfolge ausgeführt.
 
 Die Migrationen wurden als Grundlage für ein getrenntes Staging- und
 Produktionsprojekt erstellt. Für Live sollte Entwicklung nicht dauerhaft gegen
