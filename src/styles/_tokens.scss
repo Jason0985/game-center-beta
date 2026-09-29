@@ -1,0 +1,122 @@
+// Design-Tokens: neutrale, leicht kühle Dunkeltöne mit Magenta aus dem Logo als
+// einziger Markenfarbe. Kontraste geprüft (Text >= 4.5:1 auf Surface und Raised).
+:root {
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  --color-background: #0f1115;
+  --color-surface: #171a20;
+  --color-surface-raised: #1f232a;
+  --color-border: rgba(255, 255, 255, 0.12);
+  --color-border-subtle: rgba(255, 255, 255, 0.07);
+  --color-border-strong: rgba(255, 255, 255, 0.2);
+
+  --color-text: #eceef2;
+  --color-text-muted: #a7adb8;
+  --color-text-subtle: #868d99;
+
+  // Primary: Flächen (Buttons, weißer Text 4.9:1) / Light: Akzent-Text und Icons auf dunkel
+  --color-primary: #c8386d;
+  --color-primary-hover: #d64479;
+  --color-primary-light: #f27ba5;
+  --color-primary-soft: rgba(242, 123, 165, 0.12);
+  --color-primary-text: #ffffff;
+
+  --color-secondary: #8b7cf0;
+  --color-success-light: #5fcf9b;
+  --color-danger: #e5484d;
+  // Fläche für destruktive Buttons (weißer Text 4.8:1)
+  --color-danger-strong: #d2383e;
+  --color-danger-light: #ff8a8f;
+  --color-warning: #e9b44c;
+  --color-warning-border: rgba(233, 180, 76, 0.45);
+
+  --gradient-accent: var(--color-primary-light);
+
+  --color-white: #ffffff;
+  --color-neutral-muted: #8a909b;
+  --color-neutral-line: #262a31;
+  --color-neutral-card: #1c1f26;
+  --color-neutral-raised: #1f232a;
+  --color-neutral-input: #20242b;
+  --color-neutral-plum-muted: #8f8a96;
+  --color-rank-badge: #8b7cf0;
+  --color-navigation-surface: rgba(23, 26, 32, 0.94);
+  --color-navigation-highlight: rgba(255, 255, 255, 0.07);
+  --color-notification: #e5484d;
+  --color-success-text: #9fe3c2;
+  --color-danger-text: #ffb3b5;
+  --color-danger-alert: #ff8a8f;
+  --color-danger-dialog: #ff8a8f;
+
+  --color-chart-cyan: #5aa9ff;
+  --color-chart-blue: #7cc2ff;
+  --color-chart-green: #5fcf9b;
+  --color-chart-yellow: #e9c35c;
+  --color-chart-orange: #ef8a5f;
+  --color-chart-orange-light: #f5b56a;
+  --color-chart-orange-glow: rgba(245, 181, 106, 0.25);
+
+  --color-white-035: rgba(255, 255, 255, 0.035);
+  --color-white-04: rgba(255, 255, 255, 0.04);
+  --color-white-045: rgba(255, 255, 255, 0.045);
+  --color-white-05: rgba(255, 255, 255, 0.05);
+  --color-white-06: rgba(255, 255, 255, 0.06);
+  --color-white-07: rgba(255, 255, 255, 0.07);
+  --color-white-08: rgba(255, 255, 255, 0.08);
+  --color-white-10: rgba(255, 255, 255, 0.1);
+  --color-white-12: rgba(255, 255, 255, 0.12);
+  --color-white-14: rgba(255, 255, 255, 0.14);
+  --color-white-16: rgba(255, 255, 255, 0.16);
+  --color-white-18: rgba(255, 255, 255, 0.18);
+  --color-white-20: rgba(255, 255, 255, 0.2);
+  --color-white-22: rgba(255, 255, 255, 0.22);
+  --color-white-25: rgba(255, 255, 255, 0.25);
+  --color-white-58: rgba(255, 255, 255, 0.58);
+  --color-white-62: rgba(255, 255, 255, 0.62);
+  --color-white-80: rgba(255, 255, 255, 0.8);
+
+  --color-primary-16: rgba(200, 56, 109, 0.16);
+  --color-primary-20: rgba(200, 56, 109, 0.2);
+  --color-primary-28: rgba(200, 56, 109, 0.28);
+  --color-primary-38: rgba(200, 56, 109, 0.38);
+  --color-primary-light-22: rgba(242, 123, 165, 0.22);
+  --color-primary-light-28: rgba(242, 123, 165, 0.28);
+  --color-primary-light-48: rgba(242, 123, 165, 0.48);
+  --color-secondary-shadow: rgba(0, 0, 0, 0.3);
+  --color-success-12: rgba(95, 207, 155, 0.12);
+  --color-success-45: rgba(95, 207, 155, 0.45);
+  --color-success-light-28: rgba(95, 207, 155, 0.28);
+  --color-danger-12: rgba(229, 72, 77, 0.12);
+  --color-danger-45: rgba(229, 72, 77, 0.45);
+  --color-danger-light-28: rgba(255, 138, 143, 0.28);
+
+  --color-overlay-dim: rgba(5, 6, 8, 0.62);
+  --color-overlay-heavy: rgba(0, 0, 0, 0.5);
+  --color-dialog-surface: #1b1e24;
+  --color-shadow-navigation: rgba(0, 0, 0, 0.4);
+  --color-shadow-card: rgba(0, 0, 0, 0.3);
+  --color-shadow-surface: rgba(0, 0, 0, 0.25);
+
+  --shadow-surface: 0 1px 2px var(--color-shadow-surface);
+  --shadow-navigation: 0 8px 24px var(--color-shadow-navigation);
+  --shadow-overlay: 0 16px 48px var(--color-overlay-heavy);
+
+  // Platzhalter (Skeleton) für Bereiche, die noch keine echten Daten haben
+  --color-skeleton: rgba(255, 255, 255, 0.07);
+  --color-skeleton-shine: rgba(255, 255, 255, 0.11);
+
+  --radius-small: 8px;
+  --radius-medium: 12px;
+  --radius-large: 14px;
+  --radius-pill: 999px;
+
+  --top-bar-height: 49px;
+  --bottom-nav-space: 88px;
+
+  --content-width: 680px;
+  --page-padding-mobile: 16px;
+  --page-padding-desktop: 24px;
+
+  --transition-fast: 150ms ease;
+  --transition-normal: 220ms ease;
+}
